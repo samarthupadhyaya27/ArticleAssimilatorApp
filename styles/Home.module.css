@@ -1,15 +1,15 @@
 .container {
-	min-height: 100vh;
-	padding: 0 0.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	padding-top: 100px;
 }
 
 .grid {
-	/* background-color: lightpink; */
+	padding-left: 50px;
+
+	/* min-height: 75%; */
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-gap: 50px;
@@ -29,4 +29,37 @@
 	color: #ff1493;
 	font-size: 32px;
 	font-weight: 250;
+}
+
+.readingWebsitesDropToggleButton {
+	display: table-cell;
+	padding-left: 10px;
+	text-align: left;
+	border: 3px solid #ff149390;
+	background-color: white;
+	border-radius: 5px;
+	color: gray;
+	height: 80px;
+	width: 200px;
+}
+
+.readingWebsitesDropdownContent {
+	border-radius: 5px;
+	background-color: lightgray;
+	width: 200px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	visibility: hidden;
+}
+
+.findArticleButton {
+	background-color: deeppink;
+	width: 75%;
+	min-height: 50px;
+	height: 50px;
+	color: white;
+	font-size: 20px;
+	border-radius: 10px;
+	border: 0;
 }

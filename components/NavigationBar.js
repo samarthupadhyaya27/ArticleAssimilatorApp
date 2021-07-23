@@ -12,7 +12,9 @@ const NavigationBar = () => {
 			<a>Article Assimilator</a>
 			<div className={styles.navBarSpace}></div>
 			<a href="mailto:samarthupadhyaya27@gmail.com">Contact</a>
-			<MailIcon/>
+			<MailIcon style={{
+				color: 'white'
+			}}/>
 		</div>
 	)
 }

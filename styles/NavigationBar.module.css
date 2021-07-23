@@ -4,7 +4,6 @@
 	z-index: 1;
 	flex-direction: row;
 	align-items: center;
-	overflow: hidden;
 	border-radius: 1px;
 	background-color: black;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -17,7 +16,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: sticky;
+
+	/* position: sticky; */
 	padding: 10px;
 	top: 0;
 	text-decoration: none;
