@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import styles from '../styles/presentarticles.module.css'
 
 export const getServerSideProps = async (context) => {
-	console.log(context.query)
 	const url = new URL('http://localhost:5000')
 	url.searchParams.append('reading_time', context.query.reading_time)
 	url.searchParams.append('reading_speed', context.query.reading_speed)
@@ -12,19 +11,16 @@ export const getServerSideProps = async (context) => {
 	for (const website in context.query.websites) {
 		url.searchParams.append('websites', context.query.websites[website])
 	}
-	console.log(url)
 	const res = await fetch(url, {
 		method: 'GET'
 	})
 	const data = await res.json()
-	console.log(data)
 	return {
 		props: data
 	}
 }
 
 const PresentArticles = (props) => {
-	console.log(props)
 	const renderedArticles = props.articles.map((article, index) => {
 		return (
 			<div key={index}>

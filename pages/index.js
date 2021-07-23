@@ -50,7 +50,6 @@ export default function Home () {
 			}
 		}
 		const themes = formState.themes.split(',')
-		console.log(themes)
 		router.push({
 			pathname: '/presentarticles',
 			query: {
