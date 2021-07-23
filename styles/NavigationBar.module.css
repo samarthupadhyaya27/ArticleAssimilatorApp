@@ -1,0 +1,33 @@
+.navigationBar {
+	display: flex;
+	font-size: 18px;
+	z-index: 1;
+	flex-direction: row;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 1px;
+	background-color: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	height: 40px;
+}
+
+.navigationBar > a {
+	color: white;
+	font-size: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: sticky;
+	padding: 10px;
+	top: 0;
+	text-decoration: none;
+}
+
+.navigationBar > a:not(.navBarSpace):hover {
+	background-color: darkgray;
+	cursor: pointer;
+}
+
+.navBarSpace {
+	flex-grow: 1;
+}
