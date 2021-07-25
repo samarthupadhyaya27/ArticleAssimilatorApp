@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styles from '../styles/presentarticles.module.css'
 
 export const getServerSideProps = async (context) => {
-	const url = new URL('http://localhost:5000')
+	let url = new URL('http://localhost:5000')
 	url.searchParams.append('reading_time', context.query.reading_time)
 	url.searchParams.append('reading_speed', context.query.reading_speed)
 	for (const theme in context.query.themes) {
@@ -11,6 +11,7 @@ export const getServerSideProps = async (context) => {
 	for (const website in context.query.websites) {
 		url.searchParams.append('websites', context.query.websites[website])
 	}
+	url = url.toString()
 	const res = await fetch(url, {
 		method: 'GET'
 	})
