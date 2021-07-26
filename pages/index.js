@@ -145,7 +145,6 @@ export default function Home () {
 								setFormState({ ...formState, readingSpeed })
 							}
 						}}
-						required
 					/>
 					<p>(Optional) Enter your reading speed in words per minute</p>
 				</div>

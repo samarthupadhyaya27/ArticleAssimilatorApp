@@ -3,13 +3,21 @@ import styles from '../styles/presentarticles.module.css'
 
 export const getServerSideProps = async (context) => {
 	let url = new URL('http://localhost:5000')
-	url.searchParams.append('reading_time', context.query.reading_time)
-	url.searchParams.append('reading_speed', context.query.reading_speed)
-	for (const theme in context.query.themes) {
-		url.searchParams.append('themes', context.query.themes[theme])
+	if (Object.prototype.hasOwnProperty.call(context.query, 'reading_time')) {
+		url.searchParams.append('reading_time', context.query.reading_time)
 	}
-	for (const website in context.query.websites) {
-		url.searchParams.append('websites', context.query.websites[website])
+	if (Object.prototype.hasOwnProperty.call(context.query, 'reading_speed')) {
+		url.searchParams.append('reading_speed', context.query.reading_speed)
+	}
+	if (Object.prototype.hasOwnProperty.call(context.query, 'themes')) {
+		for (const theme in context.query.themes) {
+			url.searchParams.append('themes', context.query.themes[theme])
+		}
+	}
+	if (Object.prototype.hasOwnProperty.call(context.query, 'websites')) {
+		for (const website in context.query.websites) {
+			url.searchParams.append('websites', context.query.websites[website])
+		}
 	}
 	url = url.toString()
 	try {
