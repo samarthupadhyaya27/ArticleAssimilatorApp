@@ -12,12 +12,22 @@ export const getServerSideProps = async (context) => {
 		url.searchParams.append('websites', context.query.websites[website])
 	}
 	url = url.toString()
-	const res = await fetch(url, {
-		method: 'GET'
-	})
-	const data = await res.json()
-	return {
-		props: data
+	try {
+		const res = await fetch(url, {
+			method: 'GET'
+		})
+		const data = await res.json()
+		return {
+			props: data
+		}
+	} catch (err) {
+		console.error(err)
+		return {
+			props: {
+				reading_time: 0,
+				articles: []
+			}
+		}
 	}
 }
 

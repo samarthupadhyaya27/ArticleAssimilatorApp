@@ -3,12 +3,12 @@ import { Fragment } from 'react'
 import NavigationBar from '../components/NavigationBar'
 
 function MyApp ({ Component, pageProps }) {
-  return (
+	return (
 		<Fragment>
-			<NavigationBar />
+			<NavigationBar/>
 			<Component {...pageProps} />
 		</Fragment>
-  )
+	)
 }
 
 export default MyApp
