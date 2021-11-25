@@ -3,6 +3,7 @@ import styles from '../styles/presentarticles.module.css'
 
 export const getServerSideProps = async (context) => {
 	let url = new URL('http://localhost:5000')
+	console.log(context.query)
 	if (Object.prototype.hasOwnProperty.call(context.query, 'reading_time')) {
 		url.searchParams.append('reading_time', context.query.reading_time)
 	}
